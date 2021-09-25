@@ -9,9 +9,14 @@ Word reverseBits(Word w) {
     while (i < 32) {
 
         int isOn = w & (1 << i);
+        // w & 1 => isOn will be 0 if the bit is off or !0 if the bit is on.
 
+        // 0 => false
+        // 0! => true
         if (isOn) {
             result = result | (1 << (31 - i));
+            // set => |
+            // get => &
         }
 
         i++;

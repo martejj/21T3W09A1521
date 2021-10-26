@@ -30,7 +30,7 @@ main:
 
 # a,b,c,d are in $a0,$a1,$a2,$a3
 # e is in $s0
-# f is in $v0 (remporarily)
+# f is in $v0 (temporarily)
 #
 # we use $s0 for e because its value must survive a function call to sum4
 # by convention we have to store $s0 original valueon the stack so

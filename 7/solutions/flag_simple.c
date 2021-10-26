@@ -11,19 +11,19 @@ char flag[6][12] = {
 
 int main(void) {
     int row = 0;
-    outer_loop:
-    if (row >= 6) goto outer_end;
+    main_outer_start:
+    if (row >= 6) goto main_outer_end;
         int col = 0;
-        inner_loop:
-        if (col >= 12) goto inner_end;
-            char *location = ((char *)flag) + row*12 + col;
-            printf ("%c", *location);
+        main_inner_start:
+        if (col >= 12) goto main_inner_end;
+            int *address = row*12 + col + flag;
+            printf ("%c", *address);
             col++;
-            goto inner_loop;
-        inner_end:
+            goto main_inner_start;
+        main_inner_end:
         printf ("\n");
         row++;
-        goto outer_loop;
-    outer_end:
+        goto main_outer_start;
+    main_outer_end:
     return 0;
 }
